@@ -1,0 +1,31 @@
+.PRETO {
+  background-color: black;
+}
+
+.VERMELHO {
+  background-color: red;
+}
+
+.AMARELO {
+  background-color: yellow;
+}
+
+.VERDE {
+  background-color: green;
+}
+
+.AZUL {
+  background-color: blue;
+}
+
+.ROXO {
+  background-color: purple;
+}
+
+.BORDA {
+  border: 1px solid brown;
+}
+
+.FONTE-BRANCA {
+  color: white
+}
