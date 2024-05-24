@@ -68,3 +68,11 @@ rails s
 
 - [ ] Usuário consegue criar conta como ADMIN
 - [ ] Usuário consegue criar conta como CUSTOMER
+- [ ] Melhorar o CSS dos fomulários
+- [ ] Melhorar o CSS das mensagens de erro
+
+### Testes
+
+- Usuário inicia a aplicação e vê página inicial e botão de entrar
+- Usuário inicia a aplicação e vai para a tela de fazer login
+- Usuário inicia e vai para a tela de criar conta como Cliente
