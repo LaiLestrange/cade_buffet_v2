@@ -22,10 +22,17 @@
   background-color: purple;
 }
 
+.ROSA {
+  background-color: hotpink;
+}
+
 .BORDA {
   border: 1px solid brown;
 }
 
 .FONTE-BRANCA {
   color: white
+}
+.ALTURA {
+  height: 250px
 }
