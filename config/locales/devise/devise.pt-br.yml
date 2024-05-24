@@ -29,6 +29,10 @@ pt-BR:
       user:
         one: Usuário
         other: Usuários
+      customer:
+        one: Cliente
+        other: Clientes
+      manager: Administrador
   devise:
     confirmations:
       confirmed: A sua conta foi confirmada com sucesso.
@@ -103,7 +107,7 @@ pt-BR:
         update: Atualizar
         we_need_your_current_password_to_confirm_your_changes: precisamos da sua senha atual para confirmar suas mudanças
       new:
-        sign_up: Inscrever-se
+        sign_up: Criar conta
       signed_up: Boas vindas! Você realizou seu registro com sucesso.
       signed_up_but_inactive: Você se inscreveu com sucesso, porém nós não podemos autenticá-lo porque sua conta ainda não foi ativada.
       signed_up_but_locked: Você se inscreveu com sucesso. Porém nós não podemos autenticá-lo porque sua conta está bloqueada.
@@ -114,7 +118,8 @@ pt-BR:
     sessions:
       already_signed_out: Logout efetuado com sucesso.
       new:
-        sign_in: Login
+        sign_in: Entrar
+        sign_in_resource: Entrar como %{resource}
       signed_in: Login efetuado com sucesso.
       signed_out: Logout efetuado com sucesso.
     shared:
@@ -123,9 +128,9 @@ pt-BR:
         didn_t_receive_confirmation_instructions: Não recebeu instruções de confirmação?
         didn_t_receive_unlock_instructions: Não recebeu instruções de desbloqueio?
         forgot_your_password: Esqueceu sua senha?
-        sign_in: Login
+        sign_in: Entrar
         sign_in_with_provider: Entrar com %{provider}
-        sign_up: Inscrever-se
+        sign_up: Criar uma conta
       minimum_password_length:
         one: "(Mínimo de %{count} caractere)"
         other: "(Mínimo de %{count} caracteres)"

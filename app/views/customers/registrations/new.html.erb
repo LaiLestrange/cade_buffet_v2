@@ -1,0 +1,51 @@
+<h2> <%= t("activerecord.attributes.customer.sign_up_title") %></h2>
+
+
+
+      <div class="ERRORS d-inline-block d-flex justify-content-center ">
+        <%= render "customers/shared/error_messages", resource: resource %>
+      </div>
+
+
+
+<div class="FORM-SIGNUP d-flex flex-column align-items-center ">
+  <div>
+    <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+      <div class="field">
+        <%= f.label :name %><br />
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :social_security_number %><br />
+        <%= f.text_field :social_security_number %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %><br />
+        <%= f.email_field :email, autocomplete: "email" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password %>
+        <% if @minimum_password_length %>
+        <em><%= t("devise.shared.minimum_password_length.other", count: @minimum_password_length) %></em>
+        <% end %><br />
+        <%= f.password_field :password, autocomplete: "new-password" %>
+      </div>
+
+      <div class="field">
+        <%= f.label :password_confirmation %><br />
+        <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t("devise.registrations.new.sign_up") %>
+      </div>
+
+    <% end %>
+    <div class="LINKS">
+      <%= render "customers/shared/links" %>
+    </div>
+  </div>
+</div>
