@@ -13,16 +13,27 @@
 
   <body>
     <div class="container">
-      <header class="container-fluid d-flex justify-content-between VERMELHO">
-        <div class="row AMARELO">
-          <div class="col align-self-center VERDE">
-            <h1>Cadê Buffet?</h1>
-          </div>
+
+      <header class="container-fluid d-flex justify-content-between p-2">
+        <div class="align-content-center">
+            <h1 class="m-auto"> <%= link_to  "Cadê Buffet?", root_path, class:"" %> </h1>
         </div>
-        <div class="row ROXO">
-          <%= link_to  "Entrar", login_path, class:"col align-self-center ROSA" %>
+
+        <div class="d-flex flex-column justify-content-center">
+          <% if customer_signed_in? %>
+            <div class="">Olá, <%= current_customer.name %></div>
+            <%= button_to  "Sair", destroy_customer_session_path, method: :delete, form_class: "align-self-end" %>
+          <% else %>
+            <% if manager_signed_in? %>
+
+            <% else %>
+              <%= link_to  "Entrar", login_path, class:"" %>
+            <% end %>
+          <% end %>
         </div>
+
       </header>
+
       <p class="notice"><%= notice %></p>
       <p class="alert"><%= alert %></p>
 

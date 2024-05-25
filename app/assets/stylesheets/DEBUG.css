@@ -3,28 +3,42 @@
 }
 
 .VERMELHO {
-  background-color: red;
+  background-color: darkred;
+}
+
+.LARANJA {
+  background-color: orangered;
 }
 
 .AMARELO {
-  background-color: yellow;
+  background-color: goldenrod;
 }
 
 .VERDE {
-  background-color: green;
+  background-color: lightgreen;
 }
 
 .AZUL {
-  background-color: blue;
+  background-color: lightskyblue;
 }
 
 .ROXO {
-  background-color: purple;
+  background-color: indigo;
 }
 
 .ROSA {
-  background-color: hotpink;
+  background-color: magenta;
 }
+
+.MARROM {
+  background-color: sienna;
+}
+
+.AQUA {
+  background-color: aqua;
+}
+
+
 
 .BORDA {
   border: 1px solid brown;

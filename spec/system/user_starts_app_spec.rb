@@ -10,7 +10,13 @@ describe 'User starts app' do
         expect(page).to have_link 'Entrar'
       end
     end
-
+    it 'from another route' do
+      visit login_path
+      within 'header' do
+        click_on 'Cadê Buffet?'
+      end
+      expect(current_path).to eq root_path
+    end
     it 'and tries to login' do
       visit root_path
       within('header') do
@@ -18,15 +24,18 @@ describe 'User starts app' do
       end
 
       expect(current_path).to eq login_path
+
       expect(page).to have_content 'Entrar'
       expect(page).to have_link 'Entrar como Cliente'
       expect(page).to have_link 'Entrar como Administrador'
+
+      expect(page).not_to have_button 'Sair'
     end
   end
 
   context "and creates an account" do
     context "as CUSTOMER" do
-      it 'they go to create account' do
+      it 'from root page' do
         visit root_path
         within 'header' do
           click_on 'Entrar'
@@ -49,6 +58,50 @@ describe 'User starts app' do
           expect(page).to have_field 'Confirme sua senha'
           expect(page).to have_button 'Criar conta'
         end
+      end
+
+      it 'successfully' do
+        visit new_customer_registration_path
+        within '.FORM-SIGNUP' do
+          fill_in 'Nome', with: 'Carlos Áries'
+          fill_in 'CPF', with: '69727146058'
+          fill_in 'E-mail', with: 'carlos_aries@cliente.com'
+          fill_in 'Senha', with: 'cl13n73'
+          fill_in 'Confirme sua senha', with: 'cl13n73'
+          click_on 'Criar conta'
+        end
+
+        within 'header' do
+          expect(page).not_to have_link 'Entrar'
+          expect(page).to have_content 'Olá, Carlos Áries'
+          expect(page).to have_button 'Sair'
+        end
+
+        expect(page).to have_content 'Boas vindas! Você realizou seu registro com sucesso.'
+
+      end
+
+      it 'and logs out' do
+        customer = Customer.create!(
+          name: "Carlos Áries",
+          social_security_number: "69727146058",
+          email: "carlos_aries@cliente.com",
+          password: "cl13n73",
+        )
+
+        login_as customer, scope: :customer
+        visit root_path
+
+        within 'header' do
+          click_on 'Sair'
+        end
+
+        expect(current_path).to eq root_path
+        expect(page).to have_content 'Logout efetuado com sucesso'
+        within 'header' do
+          expect(page).to have_link 'Entrar'
+        end
+
       end
     end
   end

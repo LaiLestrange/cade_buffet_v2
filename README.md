@@ -11,6 +11,8 @@ Aplicação feita pela segunda vez com base nas tasks indicadas pela CampusCode 
     - [Implementadas](#implementadas)
     - [Fila de espera](#fila-de-espera)
     - [Testes](#testes)
+      - [Testes de Sistema](#testes-de-sistema)
+      - [Testes de Modelo](#testes-de-modelos)
 
 ## Tecnologias
 
@@ -63,16 +65,24 @@ rails s
 - [x] Tela de login e de signup do cliente centralizadas
 - [x] Mensagem de erro na criação de conta do cliente está centralizada
 - [x] Todas as telas até agora utilizam i18n
+- [x] Usuário consegue criar conta como Cliente e fazer o logout
 
 ### Fila de espera
 
 - [ ] Usuário consegue criar conta como ADMIN
-- [ ] Usuário consegue criar conta como CUSTOMER
 - [ ] Melhorar o CSS dos fomulários
 - [ ] Melhorar o CSS das mensagens de erro
 
 ### Testes
 
+#### Testes de Sistema
+
 - Usuário inicia a aplicação e vê página inicial e botão de entrar
 - Usuário inicia a aplicação e vai para a tela de fazer login
-- Usuário inicia e vai para a tela de criar conta como Cliente
+- Usuário entra na tela de login e volta para a tela inicial
+- Usuário cria conta como Cliente
+- Usuário consegue fazer logout
+
+#### Testes de Modelos
+
+- Cliente deve informar nome, cpf (válido e único), email e senha para criar sua conta

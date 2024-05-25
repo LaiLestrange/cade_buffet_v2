@@ -2,13 +2,15 @@ Rails.application.routes.draw do
   devise_for :managers,
   path: "managers",
   controllers: {
-    sessions: 'managers/sessions'
+    sessions: 'managers/sessions',
+    registrations: 'managers/registrations'
   }
 
   devise_for :customers,
     path: "customers",
     controllers: {
-      sessions: 'customers/sessions'
+      sessions: 'customers/sessions',
+      registrations: 'customers/registrations'
     }
 
   root to: "home#index"
