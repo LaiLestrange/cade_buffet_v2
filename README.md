@@ -13,6 +13,7 @@ Aplicação feita pela segunda vez com base nas tasks indicadas pela CampusCode 
     - [Testes](#testes)
       - [Testes de Sistema](#testes-de-sistema)
       - [Testes de Modelo](#testes-de-modelos)
+    - [Seeds](#seeds)
 
 ## Tecnologias
 
@@ -81,8 +82,13 @@ rails s
 - Usuário inicia a aplicação e vai para a tela de fazer login
 - Usuário entra na tela de login e volta para a tela inicial
 - Usuário cria conta como Cliente
-- Usuário consegue fazer logout
+- Usuário precisa preencher corretamente os dados para criar sua conta Cliente
+- Cliente consegue fazer logout
 
 #### Testes de Modelos
 
 - Cliente deve informar nome, cpf (válido e único), email e senha para criar sua conta
+
+### Seeds
+
+- 12 Clientes

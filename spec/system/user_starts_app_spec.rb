@@ -81,6 +81,32 @@ describe 'User starts app' do
 
       end
 
+      it 'leaving missing information' do
+
+        visit new_customer_registration_path
+
+        within '.FORM-SIGNUP' do
+          fill_in 'Nome', with: 'Carlos Áries'
+          fill_in 'CPF', with: '12345678900'
+          fill_in 'E-mail', with: ''
+          fill_in 'Senha', with: 'cl13n73'
+          fill_in 'Confirme sua senha', with: 'cl13n73'
+          click_on 'Criar conta'
+        end
+
+        within '.FORM-SIGNUP' do
+          expect(page).to have_field 'Nome', with: 'Carlos Áries'
+          expect(page).to have_field 'CPF', with: '12345678900'
+        end
+
+        expect(page).not_to have_content 'Boas vindas! Você realizou seu registro com sucesso.'
+        expect(page).to have_content 'Não foi possível salvar cliente'
+        expect(page).to have_content 'E-mail não pode ficar em branco'
+        expect(page).to have_content 'CPF inválido'
+
+
+      end
+
       it 'and logs out' do
         customer = Customer.create!(
           name: "Carlos Áries",
