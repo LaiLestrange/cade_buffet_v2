@@ -20,16 +20,16 @@
         </div>
 
         <div class="d-flex flex-column justify-content-center">
-          <% if customer_signed_in? %>
+          <% if @customer_app %>
             <div class="">Olá, <%= current_customer.name %></div>
             <%= button_to  "Sair", destroy_customer_session_path, method: :delete, form_class: "align-self-end" %>
-          <% else %>
-            <% if manager_signed_in? %>
-              <div class="">Olá, <%= current_manager.name %></div>
-              <%= button_to  "Sair", destroy_manager_session_path, method: :delete, form_class: "align-self-end" %>
-            <% else %>
+          <% end %>
+          <% if @manager_app %>
+            <div class="">Olá, <%= current_manager.name %></div>
+            <%= button_to  "Sair", destroy_manager_session_path, method: :delete, form_class: "align-self-end" %>
+          <% end %>
+          <% if @user_app %>
               <%= link_to  "Entrar", login_path, class:"" %>
-            <% end %>
           <% end %>
         </div>
 
@@ -39,6 +39,7 @@
       <p class="alert"><%= alert %></p>
 
       <div class="container-fluid pt-1 pb-3">
+        <%= @ALO %>
         <%= yield %>
       </div>
 

@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_05_24_143756) do
+ActiveRecord::Schema[7.1].define(version: 2024_05_26_055850) do
+  create_table "buffets", force: :cascade do |t|
+    t.string "name"
+    t.string "company_name"
+    t.string "license_number"
+    t.string "phone_number"
+    t.string "email"
+    t.string "description"
+    t.integer "manager_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["manager_id"], name: "index_buffets_on_manager_id"
+  end
+
   create_table "customers", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -38,4 +51,5 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_24_143756) do
     t.index ["reset_password_token"], name: "index_managers_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "buffets", "managers"
 end

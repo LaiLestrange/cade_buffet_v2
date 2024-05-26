@@ -5,4 +5,6 @@ class Manager < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :name, presence: true
+
+  has_one :buffet
 end

@@ -6,7 +6,7 @@
                  resource: resource.class.model_name.human.downcase)
        %>
     </h3>
-    <ul class="d-flex flex-column align-items-center">
+    <ul class="d-flex flex-column align-items-start">
       <% resource.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>

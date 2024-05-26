@@ -1,0 +1,59 @@
+<h2> <%= t("activerecord.attributes.buffet.create_buffet_title") %></h2>
+
+<div class="ERRORS d-inline-block d-flex justify-content-center ">
+  <% if @buffet.errors.any? %>
+    <div id="error_explanation" data-turbo-cache="false">
+      <h3>
+        <%= I18n.t("activerecord.attributes.buffet.errors.messages.not_saved",
+                  count: @buffet.errors.count)
+        %>
+      </h3>
+      <ul class="d-flex flex-column align-items-start">
+        <% @buffet.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+</div>
+
+<div class="FORM-NEW-BUFFET d-flex flex-column align-items-center">
+  <div>
+    <%= form_with model: @buffet do |f|%>
+      <div class="field">
+        <%= f.label :name %> <br>
+        <%= f.text_field :name, autofocus: true %>
+      </div>
+
+      <div class="field">
+        <%= f.label :description %> <br>
+        <%= f.text_area :description %>
+      </div>
+
+      <div class="field">
+        <%= f.label :company_name %> <br>
+        <%= f.text_field :company_name %>
+      </div>
+
+      <div class="field">
+        <%= f.label :license_number %> <br>
+        <%= f.text_field :license_number %>
+      </div>
+
+      <div class="field">
+        <%= f.label :email %> <br>
+        <%= f.text_field :email %>
+      </div>
+
+      <div class="field">
+        <%= f.label :phone_number %> <br>
+        <%= f.text_field :phone_number %>
+      </div>
+
+      <div class="actions">
+        <%= f.submit t("activerecord.attributes.buffet.create_buffet_btn") %>
+      </div>
+
+    <% end %>
+  </div>
+</div>

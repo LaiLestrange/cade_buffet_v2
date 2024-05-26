@@ -86,7 +86,8 @@ rails s
 - Usuário entra na tela de login e volta para a tela inicial
 - Usuário cria conta como Cliente e como Administrador de Buffet
 - Usuário precisa preencher corretamente os dados para criar suas contas
-- Cliente e Administrador conseguem fazer logout
+- Cliente e Admin conseguem fazer logout
+- Admin precisa preencher corretamente os dados para cadastrar seu Buffet
 
 #### Testes de Modelos
 

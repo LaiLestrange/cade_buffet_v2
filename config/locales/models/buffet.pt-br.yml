@@ -1,0 +1,23 @@
+pt-BR:
+  activerecord:
+    models:
+      buffet:
+        one: Buffet
+        other: Buffets
+    attributes:
+      buffet:
+        name: Nome fantasia
+        company_name: Razão social
+        license_number: CNPJ
+        phone_number: Telefone
+        email: E-mail
+        description: Descrição
+        manager: Administrador do Buffet
+        create_buffet_title: Cadastrar Buffet
+        create_buffet_btn: Salvar
+        errors:
+          messages:
+            not_saved:
+              one: 'Não foi possível salvar buffet: 1 erro'
+              other: 'Não foi possível salvar buffet: %{count} erros.'
+

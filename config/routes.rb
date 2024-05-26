@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  root to: "home#index"
+  get "/login", to: "home#login"
+
   devise_for :managers,
   path: "managers",
   controllers: {
@@ -11,8 +14,9 @@ Rails.application.routes.draw do
     controllers: {
       sessions: 'customers/sessions',
       registrations: 'customers/registrations'
-    }
+  }
 
-  root to: "home#index"
-  get "/login", to: "home#login"
+  resources :buffets, only: [:new, :create, :index]
+
+
 end
