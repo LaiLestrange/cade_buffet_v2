@@ -27,4 +27,5 @@ pt-BR:
         unconfirmed_email: E-mail não confirmado
         unlock_token: Token de desbloqueio
         updated_at: Atualizado em
-        name: 'Nome'
+        sign_up_title: Novo administrador
+        name: Nome

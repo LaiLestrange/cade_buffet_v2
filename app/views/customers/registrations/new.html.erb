@@ -1,12 +1,8 @@
 <h2> <%= t("activerecord.attributes.customer.sign_up_title") %></h2>
 
-
-
-      <div class="ERRORS d-inline-block d-flex justify-content-center ">
-        <%= render "customers/shared/error_messages", resource: resource %>
-      </div>
-
-
+<div class="ERRORS d-inline-block d-flex justify-content-center ">
+  <%= render "customers/shared/error_messages", resource: resource %>
+</div>
 
 <div class="FORM-SIGNUP d-flex flex-column align-items-center ">
   <div>
@@ -44,6 +40,7 @@
       </div>
 
     <% end %>
+
     <div class="LINKS">
       <%= render "customers/shared/links" %>
     </div>

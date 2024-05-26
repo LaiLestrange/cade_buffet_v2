@@ -25,7 +25,8 @@
             <%= button_to  "Sair", destroy_customer_session_path, method: :delete, form_class: "align-self-end" %>
           <% else %>
             <% if manager_signed_in? %>
-
+              <div class="">Olá, <%= current_manager.name %></div>
+              <%= button_to  "Sair", destroy_manager_session_path, method: :delete, form_class: "align-self-end" %>
             <% else %>
               <%= link_to  "Entrar", login_path, class:"" %>
             <% end %>
