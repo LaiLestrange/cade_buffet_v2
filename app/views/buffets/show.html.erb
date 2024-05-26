@@ -1,0 +1,15 @@
+<h2 class="text-uppercase">Buffet <span class="fw-bold"><%= @buffet.name %></span></h2>
+<div class="d-flex justify-content-between gap-5">
+  <div class="w-25">
+    <div class="fw-lighter">
+      <%= @buffet.description %>
+    </div>
+    <div class="fw-lighter fst-italic">
+      <%= @buffet.email %>
+    </div>
+    <div class="fw-lighter fst-italic">
+      <%= @buffet.phone_number %>
+    </div>
+  </div>
+  <div class="mw-50 fw-light"><%= @buffet.company_name %> | <%= @buffet.license_number %></div>
+</div>

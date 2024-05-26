@@ -3,14 +3,32 @@ require 'rails_helper'
 describe 'Manager creates Buffet' do
   context 'immediately after creates account' do
     it 'from root page' do
-      manager = Manager.create!(
-        name: "Marcos Áries",
-        email: "marcos_aries@manager.com",
-        password: "m4n4g3r",
-      )
+      # manager = Manager.create!(
+      #   name: "Marcos Áries",
+      #   email: "marcos_aries@manager.com",
+      #   password: "m4n4g3r",
+      # )
 
-      login_as manager, scope: :manager
+      # login_as manager, scope: :manager
+
       visit root_path
+      within 'header' do
+        click_on 'Entrar'
+      end
+      within '#login-buttons' do
+        click_on 'Entrar como Administrador'
+      end
+      within '.FORM-LOGIN' do
+        click_on 'Criar uma conta'
+      end
+
+      within '.FORM-SIGNUP' do
+        fill_in 'Nome', with: 'Marcos Áries'
+        fill_in 'E-mail', with: 'marcos_aries@manager.com'
+        fill_in 'Senha', with: 'm4n4g3r'
+        fill_in 'Confirme sua senha', with: 'm4n4g3r'
+        click_on 'Criar conta'
+      end
 
       expect(current_path).to eq new_buffet_path
       expect(page).to have_content 'Cadastrar Buffet'
@@ -33,7 +51,7 @@ describe 'Manager creates Buffet' do
       )
 
       login_as manager, scope: :manager
-      visit root_path
+      visit new_buffet_path
 
       within '.FORM-NEW-BUFFET' do
         fill_in 'Nome fantasia', with: 'Marte'
@@ -65,7 +83,7 @@ describe 'Manager creates Buffet' do
       )
 
       login_as manager, scope: :manager
-      visit root_path
+      visit manager_root_path
 
       within '.FORM-NEW-BUFFET' do
         fill_in 'Nome fantasia', with: ''
@@ -80,11 +98,18 @@ describe 'Manager creates Buffet' do
       expect(page).not_to have_content 'Buffet cadastrado com sucesso'
       expect(page).to have_content 'Não foi possível savar buffet'
       expect(page).to have_content "Nome fantasia não pode ficar em branco"
+      expect(page).not_to have_content "Descrição não pode ficar em branco"
     end
 
-    # lefting out information
-
   end
-  # tries to navigate before doing it
-  # tries to create a second buffet
+  # tries to navigate before doing it  ###redirecionamento de rotas
+  # tries to create a second buffet  ###associação one-to-one
+
+  #tries do access other's buffet ###autenticação
+    #view
+    #create
+    #edit ####outro arquivo, provavelmente
+
+
+
 end

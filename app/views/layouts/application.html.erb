@@ -16,7 +16,7 @@
 
       <header class="container-fluid d-flex justify-content-between p-2">
         <div class="align-content-center">
-            <h1 class="m-auto"> <%= link_to  "Cadê Buffet?", root_path, class:"" %> </h1>
+            <h1 class="m-auto"> <%= link_to  "Cadê Buffet?", @root_path, class:"" %> </h1>
         </div>
 
         <div class="d-flex flex-column justify-content-center">
@@ -39,7 +39,6 @@
       <p class="alert"><%= alert %></p>
 
       <div class="container-fluid pt-1 pb-3">
-        <%= @ALO %>
         <%= yield %>
       </div>
 

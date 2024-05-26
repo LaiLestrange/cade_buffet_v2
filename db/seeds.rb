@@ -143,3 +143,113 @@ admin12 = Manager.create!(
   email: "monique_peixes@manager.com.seed",
   password: "m4n4g3r",
 )
+
+
+buffet1 = Buffet.create!(
+  name: "Marte",
+  description: "Marte é o planeta regente de Áries",
+  company_name: "Arianos de Marte",
+  license_number: "111",
+  email: "aries_marte@buffet.com",
+  phone_number: "111",
+  manager: admin1
+)
+buffet2 = Buffet.create!(
+  name: "Vênus",
+  description: "Vênus é o planeta regente de Touro",
+  company_name: "Taurinos de Vênus",
+  license_number: "222",
+  email: "touro_venus@buffet.com",
+  phone_number: "222",
+  manager: admin2
+)
+buffet3 = Buffet.create!(
+  name: "Mercúrio",
+  description: "Mercúrio é o planeta regente de Gêmeos",
+  company_name: "Geminianos de Mercúrio",
+  license_number: "333",
+  email: "gemeos_mercurio@buffet.com",
+  phone_number: "333",
+  manager: admin3
+)
+buffet4 = Buffet.create!(
+  name: "Lua",
+  description: "Lua é o planeta regente de Câncer",
+  company_name: "Cancerianos da Lua",
+  license_number: "444",
+  email: "cancer_lua@buffet.com",
+  phone_number: "444",
+  manager: admin4
+)
+buffet5 = Buffet.create!(
+  name: "Sol",
+  description: "Sol é o planeta regente de Leão",
+  company_name: "Leoninos do Sol",
+  license_number: "555",
+  email: "leao_sol@buffet.com",
+  phone_number: "555",
+  manager: admin5
+)
+buffet6 = Buffet.create!(
+  name: "Mercúrio também",
+  description: "Mercúrio também é o planeta regente de Virgem",
+  company_name: "Virginianos de Mercúrio",
+  license_number: "666",
+  email: "virgem_mercurio@buffet.com",
+  phone_number: "666",
+  manager: admin6
+)
+buffet7 = Buffet.create!(
+  name: "Vênus também",
+  description: "Vênus também é o planeta regente de Libra",
+  company_name: "Libranos de Vênus",
+  license_number: "777",
+  email: "libra_venus@buffet.com",
+  phone_number: "777",
+  manager: admin7
+)
+buffet8 = Buffet.create!(
+  name: "Marte & Plutão",
+  description: "Marte & Plutão são os planetas regentes de Escorpião",
+  company_name: "Escorpianos de Marte e Plutão",
+  license_number: "888",
+  email: "escorpiao_marte_plutao@buffet.com",
+  phone_number: "888",
+  manager: admin8
+)
+buffet9 = Buffet.create!(
+  name: "Júpiter",
+  description: "Júpiter é o planeta regente de Sagitário",
+  company_name: "Sagitarianos de Júpiter",
+  license_number: "999",
+  email: "sagitario_jupiter@buffet.com",
+  phone_number: "999",
+  manager: admin9
+)
+buffet10 = Buffet.create!(
+  name: "Saturno",
+  description: "Saturno é o planeta regente de Capricórnio",
+  company_name: "Capricornianos de Saturno",
+  license_number: "101010",
+  email: "capricornio_saturno@buffet.com",
+  phone_number: "101010",
+  manager: admin10
+)
+buffet11 = Buffet.create!(
+  name: "Saturno & Urano",
+  description: "Saturno & Urano são os planetas regentes de Aquário",
+  company_name: "Aquarianos de Saturno e de Urano",
+  license_number: "111111",
+  email: "aquario_saturno_urano@buffet.com",
+  phone_number: "111111",
+  manager: admin11
+)
+buffet12 = Buffet.create!(
+  name: "Júpiter & Netuno",
+  description: "Júpiter & Netuno são os planetas regentes de Peixes",
+  company_name: "Piscianos de Júpiter e de Netuno",
+  license_number: "121212",
+  email: "peixes_jupiter_netuno@buffet.com",
+  phone_number: "121212",
+  manager: admin12
+)

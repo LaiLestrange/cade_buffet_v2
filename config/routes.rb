@@ -16,7 +16,8 @@ Rails.application.routes.draw do
       registrations: 'customers/registrations'
   }
 
-  resources :buffets, only: [:new, :create, :index]
+  resources :buffets, only: [:new, :create, :show]
+  get '/buffet', to: "buffets#index", as: :manager_root
 
 
 end

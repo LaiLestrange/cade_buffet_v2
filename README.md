@@ -66,13 +66,15 @@ rails s
 - [x] Tela de login e de signup do cliente centralizadas
 - [x] Mensagem de erro na criação de conta do cliente está centralizada
 - [x] Todas as telas até agora utilizam i18n
-- [x] Usuário consegue criar conta como Cliente e fazer o logout
+- [x] Usuário consegue criar conta como Cliente ou Administrador e fazer o logout
 - [x] Usuário consegue criar conta como Administrador de Buffet e fazer o logout
+- [x] Admin consegue cadastrar seu Buffet e ver suas informações
 
 ### Fila de espera
 
 - [ ] Melhorar o CSS dos fomulários
 - [ ] Melhorar o CSS das mensagens de erro
+- [ ] Melhorar a validação de dados ao criar um Buffet (aguardando os outros módulos importantes serem implementados)
 - [ ] Administrador de Buffet deve obrigatóriamente cadastrar seu Buffet
 - [ ] Cliente não deve ter acesso a rotas de gerenciamento de Buffet
 - [ ] Proibir que um usuário logado em um tipo de conta acesse rotas de new_registration e new_session do outro tipo de conta
@@ -87,14 +89,18 @@ rails s
 - Usuário cria conta como Cliente e como Administrador de Buffet
 - Usuário precisa preencher corretamente os dados para criar suas contas
 - Cliente e Admin conseguem fazer logout
+- Imediatamente após criar a conta, Administrador deve cadastrar seu Buffet
 - Admin precisa preencher corretamente os dados para cadastrar seu Buffet
+- Ao criar uma conta e cadastrar seu buffet, é redirecionado para a tela de seu buffet
 
 #### Testes de Modelos
 
 - Cliente deve informar nome, cpf (válido e único), email e senha para criar sua conta
 - Administrador deve informar nome, email e senha para criar sua conta
+- Para cadastrar um Buffet, se deve informar nome fantasia, razão social, cnpj, email e telefone, e pode informar uma descrição
 
 ### Seeds
 
 - 12 Clientes
 - 12 Administradores de Buffet
+  - 12 Buffets
